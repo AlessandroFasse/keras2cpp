@@ -82,7 +82,7 @@ set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} \
 
 project(keras2cpp)
 
-include_directories(keras2cpp PRIVATE "./include")
+include_directories("./include" PRIVATE)
 
 add_executable(keras2cpp "")
 target_sources(keras2cpp PRIVATE

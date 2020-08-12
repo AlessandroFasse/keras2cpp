@@ -1,4 +1,4 @@
-﻿#include "tensor.h"
+﻿#include "keras2cpp/tensor.h"
 
 namespace keras2cpp {
     Tensor::Tensor(Stream& file, size_t rank) : Tensor() {

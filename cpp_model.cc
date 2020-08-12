@@ -1,4 +1,4 @@
-#include "src/model.h"
+#include "keras2cpp/model.h"
 
 using keras2cpp::Model;
 using keras2cpp::Tensor;

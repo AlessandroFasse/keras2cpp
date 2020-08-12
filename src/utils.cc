@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "keras2cpp/utils.h"
 
 namespace keras2cpp {
     Stream::Stream(const std::string& filename)

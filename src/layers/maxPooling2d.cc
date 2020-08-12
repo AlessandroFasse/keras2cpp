@@ -1,4 +1,4 @@
-﻿#include "maxPooling2d.h"
+﻿#include "keras2cpp/layers/maxPooling2d.h"
 namespace keras2cpp{
     namespace layers{
         MaxPooling2D::MaxPooling2D(Stream& file)

@@ -1,4 +1,4 @@
-﻿#include "batchNormalization.h"
+﻿#include "keras2cpp/layers/batchNormalization.h"
 namespace keras2cpp{
     namespace layers{
         BatchNormalization::BatchNormalization(Stream& file)

@@ -1,4 +1,4 @@
-﻿#include "elu.h"
+﻿#include "keras2cpp/layers/elu.h"
 namespace keras2cpp{
     namespace layers{
         ELU::ELU(Stream& file) : alpha_(file) {}    

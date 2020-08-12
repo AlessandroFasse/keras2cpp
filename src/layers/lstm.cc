@@ -1,4 +1,4 @@
-﻿#include "lstm.h"
+﻿#include "keras2cpp/layers/lstm.h"
 #include <tuple>
 namespace keras2cpp{
     namespace layers{

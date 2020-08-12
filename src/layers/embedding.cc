@@ -1,4 +1,4 @@
-﻿#include "embedding.h"
+﻿#include "keras2cpp/layers/embedding.h"
 namespace keras2cpp{
     namespace layers{
         Embedding::Embedding(Stream& file) : weights_(file, 2) {}

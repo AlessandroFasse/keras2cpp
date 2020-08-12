@@ -1,4 +1,4 @@
-﻿#include "conv2d.h"
+﻿#include "keras2cpp/layers/conv2d.h"
 namespace keras2cpp{
     namespace layers{
         Conv2D::Conv2D(Stream& file)

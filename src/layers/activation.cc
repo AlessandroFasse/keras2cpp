@@ -1,4 +1,4 @@
-﻿#include "activation.h"
+﻿#include "keras2cpp/layers/activation.h"
 namespace keras2cpp{
     namespace layers{
         Activation::Activation(Stream& file) : type_(file) {

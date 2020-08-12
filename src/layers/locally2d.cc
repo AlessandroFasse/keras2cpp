@@ -1,4 +1,4 @@
-﻿#include "locally2d.h"
+﻿#include "keras2cpp/layers/locally2d.h"
 namespace keras2cpp{
     namespace layers{
         LocallyConnected2D::LocallyConnected2D(Stream& file)

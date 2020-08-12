@@ -1,4 +1,4 @@
-﻿#include "dense.h"
+﻿#include "keras2cpp/layers/dense.h"
 namespace keras2cpp{
     namespace layers{
         Dense::Dense(Stream& file)
