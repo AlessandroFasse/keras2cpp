@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: keras2cpp
+Version: 1.0.0
+Summary: keras2cpp to systempython
+Home-page: UNKNOWN
+Author: Alessandro Fasse
+Author-email: alessandrofasse@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: mockup_package
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
