@@ -8,14 +8,14 @@ namespace keras2cpp{
             auto& ww = weights_.dims_;
 
             size_t ksize = ww[2] / in.dims_[1];
-            kassert(in.dims_[0] + 1 == ww[0] + ksize);
+            //kassert(in.dims_[0] + 1 == ww[0] + ksize);
 
             auto tmp = Tensor::empty(ww[0], ww[1]);
 
-            auto is0 = cast(in.dims_[1]);
-            auto ts0 = cast(ww[1]);
-            auto ws0 = cast(ww[2] * ww[1]);
-            auto ws1 = cast(ww[2]);
+            auto is0 = in.dims_[1];
+            auto ts0 = ww[1];
+            auto ws0 = ww[2] * ww[1];
+            auto ws1 = ww[2];
 
             auto i_ptr = in.begin();
             auto b_ptr = biases_.begin();

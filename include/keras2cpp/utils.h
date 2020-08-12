@@ -9,8 +9,6 @@
 
 #define stringify(x) #x
 
-#define cast(x) static_cast<ptrdiff_t>(x)
-
 #ifndef NDEBUG
 #define kassert_eq(x, y, eps) \
     { \
@@ -29,7 +27,7 @@
             "ASSERT [%s:%d] '%s' failed\n", __FILE__, __LINE__, stringify(x)); \
         exit(-1); \
     }
-#else
+#elsez
 #define kassert(x) ;
 #define kassert_eq(x, y, eps) ;
 #endif

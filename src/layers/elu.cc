@@ -3,7 +3,7 @@ namespace keras2cpp{
     namespace layers{
         ELU::ELU(Stream& file) : alpha_(file) {}    
         Tensor ELU::operator()(const Tensor& in) const noexcept {
-            kassert(in.ndim());
+            //kassert(in.ndim());
             Tensor out;
             out.data_.resize(in.size());
             out.dims_ = in.dims_;

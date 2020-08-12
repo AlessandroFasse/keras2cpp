@@ -82,10 +82,8 @@ set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} \
 
 project(keras2cpp)
 
-include_directories("./include" PRIVATE)
-
-add_executable(keras2cpp "")
-target_sources(keras2cpp PRIVATE
+include_directories("include" PUBLIC)
+set( SOURCE 
     src/utils.cc
     src/baseLayer.cc
     src/layers/activation.cc
@@ -102,6 +100,7 @@ target_sources(keras2cpp PRIVATE
     src/layers/batchNormalization.cc
     src/model.cc
     src/tensor.cc
-    cpp_model.cc
 )
 
+add_library(keras2cpp ${SOURCE})
+target_include_directories(keras2cpp PUBLIC "include")

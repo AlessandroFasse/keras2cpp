@@ -14,7 +14,7 @@ namespace keras2cpp{
             case SoftMax:
                 return;
             }
-            kassert(false);
+            //kassert(false);
         }
 
         Tensor Activation::operator()(const Tensor& in) const noexcept {
@@ -72,8 +72,8 @@ namespace keras2cpp{
                 });
                 break;
             case SoftMax: {
-                auto channels = cast(in.dims_.back());
-                kassert(channels > 1);
+                auto channels = in.dims_.back();
+                //kassert(channels > 1);
 
                 Tensor tmp = in;
                 std::transform(in.begin(), in.end(), tmp.begin(), [](float x) {

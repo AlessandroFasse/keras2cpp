@@ -5,7 +5,7 @@ namespace keras2cpp{
         : weights_(file, 4), biases_(file), activation_(file) {}
 
         Tensor Conv2D::operator()(const Tensor& in) const noexcept {
-            kassert(in.dims_[2] == weights_.dims_[3]);
+            //kassert(in.dims_[2] == weights_.dims_[3]);
 
             auto& ww = weights_.dims_;
 
@@ -14,14 +14,14 @@ namespace keras2cpp{
             auto tmp
                 = Tensor::empty(in.dims_[0] - offset_y, in.dims_[1] - offset_x, ww[0]);
 
-            auto ws_ = cast(ww[3] * ww[2] * ww[1] * ww[0]);
-            auto ws0 = cast(ww[3] * ww[2] * ww[1]);
-            auto ws1 = cast(ww[3] * ww[2]);
-            auto ws2 = cast(ww[3]);
-            auto is0 = cast(ww[3] * in.dims_[1]);
+            auto ws_ = ww[3] * ww[2] * ww[1] * ww[0];
+            auto ws0 = ww[3] * ww[2] * ww[1];
+            auto ws1 = ww[3] * ww[2];
+            auto ws2 = ww[3];
+            auto is0 = ww[3] * in.dims_[1];
 
-            auto ty = cast(tmp.dims_[0]);
-            auto tx = cast(tmp.dims_[1]);
+            auto ty = tmp.dims_[0];
+            auto tx = tmp.dims_[1];
 
             auto w_ptr = weights_.begin();
             auto b_ptr = biases_.begin();

@@ -5,8 +5,8 @@ namespace keras2cpp{
         : weights_(file, 2), biases_(file), activation_(file) {}
 
         Tensor Dense::operator()(const Tensor& in) const noexcept {
-            kassert(in.dims_.back() == weights_.dims_[1]);
-            const auto ws = cast(weights_.dims_[1]);
+            //kassert(in.dims_.back() == weights_.dims_[1]);
+            const auto ws = weights_.dims_[1];
 
             Tensor tmp;
             tmp.dims_ = in.dims_;

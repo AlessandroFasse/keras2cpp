@@ -5,19 +5,19 @@ namespace keras2cpp{
         : pool_size_y_(file), pool_size_x_(file) {}
 
         Tensor MaxPooling2D::operator()(const Tensor& in) const noexcept {
-            kassert(in.ndim() == 3);
+            // kassert(in.ndim() == 3);
 
             const auto& iw = in.dims_;
 
             Tensor out {iw[0] / pool_size_y_, iw[1] / pool_size_x_, iw[2]};
             out.fill(-std::numeric_limits<float>::infinity());
 
-            auto is0p = cast(iw[2] * iw[1] * pool_size_y_);
-            auto is0 = cast(iw[2] * iw[1]);
-            auto is1p = cast(iw[2] * pool_size_x_);
-            auto is1 = cast(iw[2]);
-            auto os_ = cast(iw[2] * out.dims_[1] * out.dims_[0]);
-            auto os0 = cast(iw[2] * out.dims_[1]);
+            auto is0p = iw[2] * iw[1] * pool_size_y_;
+            auto is0 = iw[2] * iw[1];
+            auto is1p = iw[2] * pool_size_x_;
+            auto is1 = iw[2];
+            auto os_ = iw[2] * out.dims_[1] * out.dims_[0];
+            auto os0 = iw[2] * out.dims_[1];
 
             auto o_ptr = out.begin();
             auto i_ptr = in.begin();

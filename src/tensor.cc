@@ -2,12 +2,12 @@
 
 namespace keras2cpp {
     Tensor::Tensor(Stream& file, size_t rank) : Tensor() {
-        kassert(rank);
+        //kassert(rank);
 
         dims_.reserve(rank);
         std::generate_n(std::back_inserter(dims_), rank, [&file] {
             unsigned stride = file;
-            kassert(stride > 0);
+            //kassert(stride > 0);
             return stride;
         });
 
@@ -16,12 +16,12 @@ namespace keras2cpp {
     }
 
     Tensor Tensor::unpack(size_t row) const noexcept {
-        kassert(ndim() >= 2);
+        //kassert(ndim() >= 2);
         size_t pack_size = std::accumulate(dims_.begin() + 1, dims_.end(), 0u);
 
         auto base = row * pack_size;
-        auto first = begin() + cast(base);
-        auto last = begin() + cast(base + pack_size);
+        auto first = begin() + base;
+        auto last = begin() + base + pack_size;
 
         Tensor x;
         x.dims_ = std::vector<size_t>(dims_.begin() + 1, dims_.end());
@@ -36,20 +36,20 @@ namespace keras2cpp {
     }
 
     Tensor& Tensor::operator+=(const Tensor& other) noexcept {
-        kassert(dims_ == other.dims_);
+        //kassert(dims_ == other.dims_);
         std::transform(begin(), end(), other.begin(), begin(), std::plus<>());
         return *this;
     }
 
     Tensor& Tensor::operator*=(const Tensor& other) noexcept {
-        kassert(dims_ == other.dims_);
+        //kassert(dims_ == other.dims_);
         std::transform(begin(), end(), other.begin(), begin(), std::multiplies<>());
         return *this;
     }
 
     Tensor Tensor::fma(const Tensor& scale, const Tensor& bias) const noexcept {
-        kassert(dims_ == scale.dims_);
-        kassert(dims_ == bias.dims_);
+        //kassert(dims_ == scale.dims_);
+        //kassert(dims_ == bias.dims_);
 
         Tensor result;
         result.dims_ = dims_;
@@ -65,14 +65,14 @@ namespace keras2cpp {
     }
 
     Tensor Tensor::dot(const Tensor& other) const noexcept {
-        kassert(ndim() == 2);
-        kassert(other.ndim() == 2);
-        kassert(dims_[1] == other.dims_[1]);
+        //kassert(ndim() == 2);
+        //kassert(other.ndim() == 2);
+        //kassert(dims_[1] == other.dims_[1]);
 
         Tensor tmp {dims_[0], other.dims_[0]};
 
-        auto ts = cast(tmp.dims_[1]);
-        auto is = cast(dims_[1]);
+        auto ts = tmp.dims_[1];
+        auto is = dims_[1];
 
         auto i_ = begin();
         for (auto t0 = tmp.begin(); t0 != tmp.end(); t0 += ts, i_ += is) {
