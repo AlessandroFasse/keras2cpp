@@ -21,6 +21,7 @@ namespace keras2cpp {
         static std::unique_ptr<BaseLayer> make_layer(Stream&);
 
     public:
+        Model() {};
         Model(Stream& file);
         Tensor operator()(const Tensor& in) const noexcept override;
     };
