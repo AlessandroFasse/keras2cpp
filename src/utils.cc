@@ -3,7 +3,7 @@
 namespace keras2cpp {
     Stream::Stream(const std::string& filename)
     : stream_(filename, std::ios::binary) {
-        stream_.exceptions();
+        // stream_.exceptions();
         if (!stream_.is_open())
             throw std::runtime_error("Cannot open " + filename);
     }
